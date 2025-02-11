@@ -25,11 +25,10 @@ interface RightPanelProps {
 }
 
 const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
-  const isMobile = useMediaQuery("(max-width:600px)"); 
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
     <Box p={4} height="100%" display="flex" flexDirection="column">
-      
       <Box
         display="flex"
         flexDirection="row"
@@ -37,7 +36,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
         justifyContent={isMobile ? "space-between" : "right"}
         gap={2}
         flexWrap="wrap"
-        sx={{ mb: isMobile ? 2 : 0 }} 
+        sx={{ mb: isMobile ? 2 : 0 }}
       >
         <Select
           defaultValue="English"
@@ -74,16 +73,26 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
             },
           }}
         >
-          <MenuItem value="English" sx={{
-      color: "black",
-      fontWeight: "bold",
-      "&:hover": { backgroundColor: "#b089e5", color: "white" },
-    }}>English</MenuItem>
-          <MenuItem value="Spanish" sx={{
-      color: "black",
-      fontWeight: "bold",
-      "&:hover": { backgroundColor: "#b089e5", color: "white" },
-    }}>Spanish</MenuItem>
+          <MenuItem
+            value="English"
+            sx={{
+              color: "black",
+              fontWeight: "bold",
+              "&:hover": { backgroundColor: "#b089e5", color: "white" },
+            }}
+          >
+            English
+          </MenuItem>
+          <MenuItem
+            value="Spanish"
+            sx={{
+              color: "black",
+              fontWeight: "bold",
+              "&:hover": { backgroundColor: "#b089e5", color: "white" },
+            }}
+          >
+            Spanish
+          </MenuItem>
         </Select>
         {page === "connect-social" && (
           <ButtonElement
@@ -119,14 +128,13 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
         )}
       </Box>
 
-
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          flexGrow: 1, 
+          flexGrow: 1,
         }}
       >
         {page === "connect-social" && (
@@ -186,11 +194,10 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
                   },
                 }}
               />
-          
             </Box>
 
             <Typography fontSize="14px" mt={2}>
-             Already Enrolled? {" "}
+              Already Enrolled?{" "}
               <Link
                 href="signup"
                 color="primary"
@@ -217,17 +224,19 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
               position="absolute"
               bottom={20}
             >
-           
-              <Link href="#" style={{
-      color: "#6A4C93", // Deep purple tone matching your theme
-      fontWeight: "bold",
-      textDecoration: "none",
-      padding: "2px 4px",
-      borderRadius: "4px",
-      transition: "0.3s",
-    }}
-    onMouseOver={(e) => (e.currentTarget.style.color = "#4A3173")} // Darker purple on hover
-    onMouseOut={(e) => (e.currentTarget.style.color = "#6A4C93")}>
+              <Link
+                href="#"
+                style={{
+                  color: "#6A4C93", // Deep purple tone matching your theme
+                  fontWeight: "bold",
+                  textDecoration: "none",
+                  padding: "2px 4px",
+                  borderRadius: "4px",
+                  transition: "0.3s",
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.color = "#4A3173")} // Darker purple on hover
+                onMouseOut={(e) => (e.currentTarget.style.color = "#6A4C93")}
+              >
                 Privacy Policy
               </Link>
             </Box>

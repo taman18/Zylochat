@@ -52,15 +52,57 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ title, subtitle, page }) => {
               defaultValue="English"
               variant="outlined"
               size="small"
+              // sx={{
+              //   background: "#fff",
+              //   borderRadius: "8px",
+              //   fontSize: "0.875rem",
+              //   fontWeight: "bold",
+              // }}
               sx={{
-                background: "#fff",
+                background: "linear-gradient(to right, #cca8e9, #defcf9)", // Match with background
                 borderRadius: "8px",
                 fontSize: "0.875rem",
                 fontWeight: "bold",
+                color: "black",
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "transparent", // Hide outline
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#b089e5", // Light border on hover
+                },
+                "& .MuiSelect-icon": {
+                  color: "black", // Customize dropdown arrow color
+                },
+              }}
+              MenuProps={{
+                PaperProps: {
+                  sx: {
+                    background: "linear-gradient(to right, #cca8e9, #defcf9)", // Match menu items background
+                    borderRadius: "8px",
+                  },
+                },
               }}
             >
-              <MenuItem value="English">English</MenuItem>
-              <MenuItem value="Spanish">Spanish</MenuItem>
+              <MenuItem
+                value="English"
+                sx={{
+                  color: "black",
+                  fontWeight: "bold",
+                  "&:hover": { backgroundColor: "#b089e5", color: "white" },
+                }}
+              >
+                English
+              </MenuItem>
+              <MenuItem
+                value="Spanish"
+                sx={{
+                  color: "black",
+                  fontWeight: "bold",
+                  "&:hover": { backgroundColor: "#b089e5", color: "white" },
+                }}
+              >
+                Spanish
+              </MenuItem>
             </Select>
             {page === "connect-social" && (
               <ButtonElement
@@ -117,7 +159,12 @@ const LeftPanel: React.FC<LeftPanelProps> = ({ title, subtitle, page }) => {
           height={!isMobile ? "100%" : "auto"}
         >
           <Image
-            src="/assets/images/png/signup.png"
+            // src="/assets/images/png/signup.png"
+            src={
+              page === "connect-social"
+                ? "/assets/images/png/instaConnect.png"
+                : "/assets/images/png/signinImg.png"
+            }
             alt="Illustration"
             width={150} // Add explicit width
             height={170} // Add explicit height

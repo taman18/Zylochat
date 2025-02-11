@@ -23,14 +23,12 @@ const Signin = () => {
 
   return (
     <Box display="flex" flexDirection="column" height="100vh">
-      <Box
-        display="flex"
-        flexDirection={isMobile ? "column" : "row"} 
-        flex={1}
-      >
-        <Box flex={1} 
-        // bgcolor="grey.100" 
-        width={isMobile ? "100%" : "40%"}>
+      <Box display="flex" flexDirection={isMobile ? "column" : "row"} flex={1}>
+        <Box
+          flex={1}
+          // bgcolor="grey.100"
+          width={isMobile ? "100%" : "40%"}
+        >
           <LeftPanel
             title={"Welcome back"}
             subtitle={"Let’s get you signed in"}
@@ -75,7 +73,8 @@ const Signin = () => {
                       boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
                       transition: "0.3s",
                       "&:hover": {
-                        background: "linear-gradient(to right, #b089e5, #cceef8)",
+                        background:
+                          "linear-gradient(to right, #b089e5, #cceef8)",
                         boxShadow: "0 6px 15px rgba(0, 0, 0, 0.3)",
                       },
                     }}
@@ -83,17 +82,24 @@ const Signin = () => {
                 </Box>
 
                 <Typography fontSize="14px" mt={2}>
-                  Already Enrolled? {" "}
-                  <Link href="#" style={{
-      color: "#6A4C93", // Deep purple tone matching your theme
-      fontWeight: "bold",
-      textDecoration: "none",
-      padding: "2px 4px",
-      borderRadius: "4px",
-      transition: "0.3s",
-    }}
-    onMouseOver={(e) => (e.currentTarget.style.color = "#4A3173")} // Darker purple on hover
-    onMouseOut={(e) => (e.currentTarget.style.color = "#6A4C93")}>
+                  Already Enrolled?{" "}
+                  <Link
+                    href="#"
+                    style={{
+                      color: "#6A4C93", // Deep purple tone matching your theme
+                      fontWeight: "bold",
+                      textDecoration: "none",
+                      padding: "2px 4px",
+                      borderRadius: "4px",
+                      transition: "0.3s",
+                    }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.color = "#4A3173")
+                    } // Darker purple on hover
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.color = "#6A4C93")
+                    }
+                  >
                     Connect Your Instagram
                   </Link>
                 </Typography>
@@ -107,16 +113,19 @@ const Signin = () => {
                 left="50%"
                 sx={{ transform: "translateX(-50%)" }}
               >
-                <Link href="#" style={{
-      color: "#6A4C93", // Deep purple tone matching your theme
-      fontWeight: "bold",
-      textDecoration: "none",
-      padding: "2px 4px",
-      borderRadius: "4px",
-      transition: "0.3s",
-    }}
-    onMouseOver={(e) => (e.currentTarget.style.color = "#4A3173")} // Darker purple on hover
-    onMouseOut={(e) => (e.currentTarget.style.color = "#6A4C93")}>
+                <Link
+                  href="#"
+                  style={{
+                    color: "#6A4C93", // Deep purple tone matching your theme
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    padding: "2px 4px",
+                    borderRadius: "4px",
+                    transition: "0.3s",
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.color = "#4A3173")} // Darker purple on hover
+                  onMouseOut={(e) => (e.currentTarget.style.color = "#6A4C93")}
+                >
                   Privacy Policy
                 </Link>
               </Box>
@@ -126,7 +135,7 @@ const Signin = () => {
         <Box
           flex={1}
           // bgcolor="background.paper"
-          display={isMobile ? "none" : "block"} 
+          display={isMobile ? "none" : "block"}
         >
           <RightPanel page="signin" />
         </Box>

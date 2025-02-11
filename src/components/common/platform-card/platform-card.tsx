@@ -9,7 +9,12 @@ interface PlatformCardProps {
   sx?: object; // ✅ New prop for custom sx styles
 }
 
-const PlatformCard: React.FC<PlatformCardProps> = ({ icon, title, description ,sx}) => (
+const PlatformCard: React.FC<PlatformCardProps> = ({
+  icon,
+  title,
+  description,
+  sx,
+}) => (
   <Card
     variant="elevation"
     elevation={2}
@@ -44,10 +49,18 @@ const PlatformCard: React.FC<PlatformCardProps> = ({ icon, title, description ,s
       {icon}
     </Box>
     <CardContent sx={{ padding: 0, flexGrow: 1 }}>
-      <Typography variant="h6" fontWeight="bold" sx={{ mb: 0.5, fontSize: "1.1rem" }}>
+      <Typography
+        variant="h6"
+        fontWeight="bold"
+        sx={{ mb: 0.5, fontSize: "1.1rem" }}
+      >
         {title}
       </Typography>
-      <Typography variant="body2" color="textSecondary" sx={{ fontSize: "0.9rem" }}>
+      <Typography
+        variant="body2"
+        color="textSecondary"
+        sx={{ fontSize: "0.9rem" }}
+      >
         {description}
       </Typography>
     </CardContent>
