@@ -43,15 +43,47 @@ const RightPanel: React.FC<RightPanelProps> = ({ page }) => {
           defaultValue="English"
           variant="outlined"
           size="small"
+          // sx={{
+          //   background: "#fff",
+          //   borderRadius: "8px",
+          //   fontSize: "0.875rem",
+          //   fontWeight: "bold",
+          // }}
           sx={{
-            background: "#fff",
+            background: "linear-gradient(to right, #cca8e9, #defcf9)", // Match with background
             borderRadius: "8px",
             fontSize: "0.875rem",
             fontWeight: "bold",
+            color: "black",
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "transparent", // Hide outline
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#b089e5", // Light border on hover
+            },
+            "& .MuiSelect-icon": {
+              color: "black", // Customize dropdown arrow color
+            },
+          }}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                background: "linear-gradient(to right, #cca8e9, #defcf9)", // Match menu items background
+                borderRadius: "8px",
+              },
+            },
           }}
         >
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Spanish">Spanish</MenuItem>
+          <MenuItem value="English" sx={{
+      color: "black",
+      fontWeight: "bold",
+      "&:hover": { backgroundColor: "#b089e5", color: "white" },
+    }}>English</MenuItem>
+          <MenuItem value="Spanish" sx={{
+      color: "black",
+      fontWeight: "bold",
+      "&:hover": { backgroundColor: "#b089e5", color: "white" },
+    }}>Spanish</MenuItem>
         </Select>
         {page === "connect-social" && (
           <ButtonElement
